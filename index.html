@@ -101,18 +101,23 @@ It wasn't outputting on a blue scale before but it has gotten fixed.
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
-        var canvas2 = document.getElementById('myCanvas2'); //links to second canvas
-        var context2 = canvas2.getContext("2d"); //accesses second canvas on 2 dimensions
+         //links to second canvas 
+        var canvas2 = document.getElementById('myCanvas2'); 
+         //second canvas on 2 dimensions
+        var context2 = canvas2.getContext("2d"); 
          
-        var imageData = context.getImageData(0, 0, 600, 500); //same size as first canvas
-        var canvasData = imageData.data; //stores data of the canvas pixels
+         //made it the same size as first canvas 
+        var imageData = context.getImageData(0, 0, 600, 500); 
+         //data of the canvas is stored in pixels
+        var canvasData = imageData.data; 
          
-        for(var i = 0; i < canvasData.length; i += 4) { //loop that processes each pixel of the image inputted
-            canvasData[i] = 0; //sets red to 0 so no red is outputted
-            canvasData[i + 1] = 0; //sets green to 0 so no green is outputted
+         //the loop that processes each pixel of the image inputted
+        for(var i = 0; i < canvasData.length; i += 4) { 
+            canvasData[i] = 0; //sets red to 0 so that no red is outputted
+            canvasData[i + 1] = 0; //sets green to 0 so that no green is outputted
          }
          
-         context2.putImageData(imageData, 0, 0); //outputs the blue image onto second canvas
+         context2.putImageData(imageData, 0, 0); // it outputs the blue image onto the second canvas
           
             
         } // end of img.onload
@@ -121,7 +126,7 @@ It wasn't outputting on a blue scale before but it has gotten fixed.
       } //  end of reader.onload
       
       reader.readAsDataURL(file);
-    } // end of the if statement checking that file is an image
+    } // end of  if statement checking that the file is an image
     else
     {
       // this is what happens if the orignial file selected is not an image file
